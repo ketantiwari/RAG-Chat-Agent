@@ -183,20 +183,5 @@ Optional additional screenshots:
 4. Web search not used:
    - Enable toggle and provide Tavily key.
 
-## 13. Future Roadmap
 
-- Qdrant vector DB
-- PostgreSQL metadata store
-- Redis distributed cache
-- Docker + Kubernetes deployment
-- Auth + multi-user tenancy
-- Cloud object storage
-- Better reranker and evaluator (LLM-as-judge)
 
-## 14. Why This Is Scalable
-
-- Clear separation of concerns
-- Replaceable provider abstractions
-- Modular retrieval pipeline
-- Dedicated memory, cache, and evaluation layers
-- Storage adapters can be swapped with minimal API changes
