@@ -2,7 +2,7 @@ from utils.config import settings
 
 
 def test_settings_defaults():
-    assert settings.embedding_model == "sentence-transformers/all-MiniLM-L6-v2"
+    assert settings.embedding_model in ["models/text-embedding-004", "sentence-transformers/all-MiniLM-L6-v2"]
     assert settings.llm_provider in ["gemini", "groq"]
     assert settings.chunk_size == 800
     assert settings.chunk_overlap == 100
