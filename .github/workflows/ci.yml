@@ -44,7 +44,7 @@ jobs:
           TAVILY_API_KEY: "test_tavily_key"
           LOG_LEVEL: "WARNING"
         run: |
-          pytest --cov=. --cov-report=xml tests/
+          python -m pytest --cov=. --cov-report=xml tests/
 
       - name: Upload Coverage Results (Optional)
         uses: actions/upload-artifact@v4
