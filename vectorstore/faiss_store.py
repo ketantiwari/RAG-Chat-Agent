@@ -13,7 +13,7 @@ logger = get_logger(__name__)
 
 
 class FaissStore:
-    def __init__(self, dim: int = 384) -> None:
+    def __init__(self, dim: int = 768) -> None:
         self.index_path = Path(settings.faiss_dir) / "docs.index"
         self.meta_path = Path(settings.faiss_dir) / "docs_meta.pkl"
         self.index = faiss.IndexFlatL2(dim)

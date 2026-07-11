@@ -17,7 +17,7 @@ class Settings(BaseModel):
     logs_dir: Path = Path("logs")
     prompts_dir: Path = Path("prompts")
 
-    embedding_model: str = os.getenv("EMBEDDING_MODEL", "sentence-transformers/all-MiniLM-L6-v2")
+    embedding_model: str = os.getenv("EMBEDDING_MODEL", "models/text-embedding-004")
     llm_provider: str = os.getenv("LLM_PROVIDER", "gemini")
     gemini_model: str = os.getenv("GEMINI_MODEL", "gemini-1.5-flash")
     groq_model: str = os.getenv("GROQ_MODEL", "llama-3.3-70b-versatile")
