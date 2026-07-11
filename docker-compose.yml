@@ -1,0 +1,39 @@
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: uvicorn main:app --host 0.0.0.0 --port 8000
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    volumes:
+      - cache_data:/app/cache_data
+      - faiss_index:/app/faiss_index
+      - logs:/app/logs
+      - uploaded_files:/app/uploaded_files
+      - data:/app/data
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: streamlit run app.py --server.port 8501 --server.address 0.0.0.0
+    ports:
+      - "8501:8501"
+    environment:
+      - API_BASE=http://backend:8000/api
+    env_file:
+      - .env
+    depends_on:
+      - backend
+    restart: unless-stopped
+
+volumes:
+  cache_data:
+  faiss_index:
+  logs:
+  uploaded_files:
+  data:

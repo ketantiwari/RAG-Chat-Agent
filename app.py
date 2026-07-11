@@ -2,11 +2,15 @@ from __future__ import annotations
 
 import uuid
 import json
+import os
 import requests
 import streamlit as st
+from dotenv import load_dotenv
 from requests.exceptions import RequestException
 
-API_BASE = "http://localhost:8000/api"
+load_dotenv()
+
+API_BASE = os.getenv("API_BASE", "http://localhost:8000/api")
 
 
 def render_answer_chips(retrieval_mode: str, citations: list[dict], retrieved_context: list[dict], metrics: dict) -> None:

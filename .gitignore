@@ -1,18 +1,40 @@
+# Environments
 .env
 .env.*
 !.env.example
+.venv/
+venv/
+ENV/
+
+# Python caches and compiled files
 __pycache__/
 *.pyc
 *.pyo
+*.pyd
+
+# Testing and Coverage
 .pytest_cache/
-.streamlit/
-logs/*.log
-*.log
+.coverage
+coverage.xml
+htmlcov/
+.coverage.*
+
+# Application directories (caches, indices, local user uploads)
+logs/
 cache_data/
 faiss_index/
 uploaded_files/
-.venv/
+data/
+
+# IDE configurations
 .idea/
 .vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS files
 .DS_Store
 Thumbs.db
