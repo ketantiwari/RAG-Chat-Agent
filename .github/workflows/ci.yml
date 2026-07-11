@@ -43,6 +43,7 @@ jobs:
           GROQ_API_KEY: "test_groq_key"
           TAVILY_API_KEY: "test_tavily_key"
           LOG_LEVEL: "WARNING"
+          PYTHONPATH: "."
         run: |
           python -m pytest --cov=. --cov-report=xml tests/
 
